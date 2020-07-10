@@ -9,9 +9,9 @@ public class DataSet {
 
 	public static final int linhas = 100, colunas = 50;
 	public static final int qtdeAgentes = 20;
-	public static final int tempos = 10;
+	public static final int tempos = 10000;
 
-	private static final double probabilidadeMover = 1;
+	public static final double probabilidadeMover = 0.001f;
 
 	private static final int TIPOMOVIMENTO_ALEATORIO = 1;
 	private static final int TIPOMOVIMENTO_DIRECIONAL = 2;
@@ -63,7 +63,6 @@ public class DataSet {
 		}
 
 		for (int t = 0; t < tempos; t++) {
-			// System.out.println("Iteração: " + t);
 			for (Agente agente : agentes) {
 				Posicao atual = agente.movimentos.get(agente.movimentos.size() - 1);
 				Posicao proximo = new Posicao();
@@ -72,37 +71,35 @@ public class DataSet {
 				proximo.destinoX = atual.destinoX;
 				proximo.destinoY = atual.destinoY;
 
-				System.out.println(proximo.destinoX + " , " + proximo.destinoY);
-
 				agente.movimentos.add(proximo);
 
 				// sorteia se vai relaizar ou não um movimento
-				if (random.nextDouble() < probabilidadeMover) {
-					if (agente.chegouDestino) {
+				if (agente.chegouDestino) {
+					if (random.nextDouble() < probabilidadeMover) {
 						// se tiver chegado ao destino sorteia um novo destino
 						Posicao pos = sorteiaPosicao();
 						proximo.destinoX = pos.posX;
 						proximo.destinoY = pos.posY;
 						agente.chegouDestino = false;
+					}
+				} else {
+					// desloca no sentido do destino
+
+					int distanciaX = atual.destinoX - atual.posX;
+					int distanciaY = atual.destinoY - atual.posY;
+					if (distanciaX == 0 && distanciaY == 0) {
+						agente.chegouDestino = true;
 					} else {
-						// desloca no sentido do destino
+						if (distanciaX > 0) {
+							proximo.posX = atual.posX + 1;
+						} else if (distanciaX < 0) {
+							proximo.posX = atual.posX - 1;
+						}
 
-						int distanciaX = atual.destinoX - atual.posX;
-						int distanciaY = atual.destinoY - atual.posY;
-						if (distanciaX == 0 && distanciaY == 0) {
-							agente.chegouDestino = true;
-						} else {
-							if (distanciaX > 0) {
-								proximo.posX = atual.posX + 1;
-							} else if (distanciaX < 0) {
-								proximo.posX = atual.posX - 1;
-							}
-
-							if (distanciaY > 0) {
-								proximo.posY = atual.posY + 1;
-							} else if (distanciaY < 0) {
-								proximo.posY = atual.posY - 1;
-							}
+						if (distanciaY > 0) {
+							proximo.posY = atual.posY + 1;
+						} else if (distanciaY < 0) {
+							proximo.posY = atual.posY - 1;
 						}
 					}
 				}
@@ -145,11 +142,11 @@ public class DataSet {
 		char id;
 		Color color;
 		public List<Posicao> movimentos;
+		boolean infectado;
 
 		boolean chegouDestino;
 
 		public Agente(char id, Posicao posicaoInicial) {
-			color = randomColor();
 			this.id = id;
 			movimentos = new ArrayList();
 			movimentos.add(posicaoInicial);
@@ -176,6 +173,7 @@ public class DataSet {
 
 	public static class Zona {
 		int x0, x1, y0, y1, risco;
+		int infectado = 0;
 
 		public Zona(int x0, int sizeX, int y0, int sizeY, int risco) {
 			this.x0 = x0;
