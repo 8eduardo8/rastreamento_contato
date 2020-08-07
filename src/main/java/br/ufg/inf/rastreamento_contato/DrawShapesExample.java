@@ -2,168 +2,227 @@ package br.ufg.inf.rastreamento_contato;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Polygon;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.DecimalFormat;
+import java.util.List;
 
 import javax.swing.JFrame;
-import javax.xml.crypto.Data;
 
-import br.ufg.inf.rastreamento_contato.DataSet.Agente;
-import br.ufg.inf.rastreamento_contato.DataSet.Posicao;
-import br.ufg.inf.rastreamento_contato.DataSet.Zona;
+import com.google.gson.Gson;
+
+import br.ufg.inf.rastreamento_contato.model.Individuo;
+import br.ufg.inf.rastreamento_contato.model.Objeto;
+import br.ufg.inf.rastreamento_contato.model.Posicao;
 
 public class DrawShapesExample {
 
-	static DataSet dataSet;
-	public static final int frameWidth = DataSet.linhas * 10;
-	public static final int frameHeight = DataSet.colunas * 10;
-	static int sleep = 100;
+	JFrame frame;
+	int frameWidth;
+	int frameHeight;
+	DataSet dataSet;
+	int velocidade;
+	int tempoContaminacao;
+	boolean somenteContatoPrimario;
+	boolean ponderarContato = true;
 
-	public static int t;
+	int t;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
+		// DataSet dataset = new DataSet();
+		// dataset.init();
+		//
+		// // salvar gson em um dataset
+		// Gson gson = new Gson();
+		// String json = gson.toJson(dataset);
+		//
+		// try {
+		// File file = new File(new
+		// SimpleDateFormat("yyyyMMddHHmmss'.json'").format(new Date()));
+		// System.out.println(file.getAbsolutePath());
+		// FileWriter fw = new FileWriter(file);
+		// fw.write(json);
+		// fw.flush();
+		// fw.close();
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+
+		String texto = "";
+		List<String> linhas = Files.readAllLines(Paths.get(new File("dataset.json").getAbsolutePath()));
+		for (String s : linhas) {
+			texto += s;
+		}
+		Gson gson = new Gson();
+		DataSet dataset = gson.fromJson(texto, DataSet.class);
+
+		new DrawShapesExample(new JFrame(), dataset, 100, 50, false).executar();
+
+		// new Parametro();
+
+	}
+
+	public DrawShapesExample(JFrame frame, DataSet dataSet, int velocidade, int tempoContaminacao,
+			boolean somenteContatoPrimario) {
+		this.frame = frame;
+		this.dataSet = dataSet;
+		this.velocidade = velocidade;
+		this.tempoContaminacao = tempoContaminacao;
+		this.somenteContatoPrimario = somenteContatoPrimario;
+	}
+
+	public void executar() {
 		// Create a frame
-
-		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Add a component with a custom paint method
+		frameWidth = DataSet.linhas * 10;
+		frameHeight = DataSet.colunas * 10;
 
 		// Display the frame
-
 		frame.setSize(frameWidth + 30, frameHeight + 50);
 		frame.setVisible(true);
 
-		dataSet = new DataSet();
-		dataSet.init();
-
 		// SELECIONA UM AGENTE PARA SER INFECTADO
-		dataSet.agentes.get(0).infectado = true;
+		dataSet.individuos.get(0).infectado = true;
+		dataSet.individuos.get(0).qtdContatoObjetoPrimario = 1;
 
 		frame.add(new CustomPaintComponent());
 
-		for (t = 0; t <= DataSet.tempos; t++) {
+		for (t = 0; t < DataSet.tempos; t++) {
 			System.out.println("Desenhando: " + t);
 
 			frame.repaint();
 			frame.setVisible(true);
 
 			try {
-				Thread.sleep(sleep);
+				Thread.sleep(velocidade);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-
 	}
 
-	/**
-	 * To draw on the screen, it is first necessary to subclass a Component and
-	 * override its paint() method. The paint() method is automatically called
-	 * by the windowing system whenever component's area needs to be repainted.
-	 */
-	static class CustomPaintComponent extends Component {
+	class CustomPaintComponent extends Component {
+
+		private static final long serialVersionUID = 1L;
 
 		public void paint(Graphics g) {
+			// DIMINIU AS ZONAS INFECTADAS
+			for (Objeto objeto : dataSet.objetos) {
+				if (objeto.infectadoPrimario > 0)
+					objeto.infectadoPrimario--;
+				if (objeto.infectadoSecundario > 0)
+					objeto.infectadoSecundario--;
 
+				for (Individuo individuo : dataSet.individuos) {
+					Posicao posicao = individuo.movimentos.get(t);
+					if (posicao.posX == posicao.destinoX && posicao.posY == posicao.destinoY) {
+						if (posicao.posX >= objeto.x0 && posicao.posX < objeto.x1 && posicao.posY >= objeto.y0
+								&& posicao.posY < objeto.y1) {
+							// INDIVÃ�DUO ESTÃ� PARADO NO OBJETO
+							if (somenteContatoPrimario == false) {
+								if (objeto.infectadoSecundario > 0) {
+									individuo.qtdContatoObjetoSecundario++;
+								}
+								if (individuo.qtdContatoObjetoSecundario > 0 || individuo.qtdContatoSecundario > 0) {
+									objeto.infectadoSecundario = tempoContaminacao * objeto.risco;
+								}
+							}
+
+							if (objeto.infectadoPrimario > 0) {
+								individuo.qtdContatoObjetoPrimario++;
+							}
+							if (individuo.qtdContatoObjetoPrimario > 0 || individuo.qtdContatoPrimario > 0) {
+								objeto.infectadoPrimario = tempoContaminacao * objeto.risco;
+							}
+						}
+					}
+				}
+			}
+			// VERIFICA SE ALGUM INFECTADO CHEGOU PERTO DE ALGUEM
+
+			for (Individuo individuo : dataSet.individuos) {
+				// CALCULA A DISTÃ‚NCIA PARA OS DEMAIS AGENTES
+				for (Individuo x : dataSet.individuos) {
+					if (proximo(x.movimentos.get(t), individuo.movimentos.get(t))) {
+						if (individuo.qtdContatoPrimario > 0 || individuo.qtdContatoObjetoPrimario > 0) {
+							x.qtdContatoPrimario++;
+						}
+						if (somenteContatoPrimario == false) {
+							if (individuo.qtdContatoSecundario > 0 || individuo.qtdContatoObjetoSecundario > 0) {
+								x.qtdContatoSecundario++;
+							}
+						}
+					}
+				}
+			}
+
+			desenha(g);
+		}
+
+		void desenha(Graphics g) {
 			// Retrieve the graphics context; this object is used to paint
 			// shapes
-
 			Graphics2D g2d = (Graphics2D) g;
 
 			g2d.setColor(Color.black);
 			g2d.fillRect(0, 0, frameWidth, frameHeight);
 
-			for (Zona zona : dataSet.zonas) {
-				if (zona.risco == 1) {
+			for (Objeto objeto : dataSet.objetos) {
+				if (objeto.risco == 1) {
 					g2d.setColor(Color.GRAY);
-				} else if (zona.risco == 2) {
+				} else if (objeto.risco == 2) {
 					g2d.setColor(Color.ORANGE);
-				} else if (zona.risco == 3) {
+				} else if (objeto.risco == 3) {
 					g2d.setColor(Color.RED);
 				}
-				if (zona.infectado > 0) {
+				if (objeto.infectadoPrimario > 0 || objeto.infectadoSecundario > 0) {
 					g2d.setColor(Color.BLUE);
 				}
 
-				g2d.fillRect(zona.x0 * 10, zona.y0 * 10, (zona.x1 - zona.x0) * 10, (zona.y1 - zona.y0) * 10);
+				g2d.fillRect(objeto.x0 * 10, objeto.y0 * 10, (objeto.x1 - objeto.x0) * 10,
+						(objeto.y1 - objeto.y0) * 10);
 			}
 
-			for (Agente agente : dataSet.agentes) {
-				if (agente.infectado) {
-					g2d.setColor(Color.BLUE);
+			int infectados = 0;
+			for (Individuo individuo : dataSet.individuos) {
+				if (individuo.qtdContatoPrimario > 0 || individuo.qtdContatoSecundario > 0) {
+					infectados++;
+				} else if (somenteContatoPrimario == false
+						&& (individuo.qtdContatoObjetoSecundario > 0 || individuo.qtdContatoSecundario > 0)) {
+					infectados++;
+				}
+
+				if (individuo.infectado == true) {
+					g2d.setColor(Color.RED);
+				} else if (individuo.qtdContatoPrimario > 0 || individuo.qtdContatoSecundario > 0
+						|| individuo.qtdContatoObjetoPrimario > 0 || individuo.qtdContatoObjetoSecundario > 0) {
+					g2d.setColor(Color.GREEN);
 				} else {
 					g2d.setColor(Color.WHITE);
 				}
-				// g2d.setColor(agente.color);
-				Posicao atual = agente.movimentos.get(t);
+				// g2d.setColor(individuo.color);
+				Posicao atual = individuo.movimentos.get(t);
 				g2d.fillOval(atual.posX * 10, atual.posY * 10, 10, 10);
 
 				g2d.drawOval(atual.destinoX * 10, atual.destinoY * 10, 10, 10);
-
 			}
-
-			// DIMINIU AS ZONAS INFECTADAS
-			for (Zona zona : dataSet.zonas) {
-				if (zona.infectado > 0) {
-					zona.infectado--;
-
-					// VERIFICA SE TEM ALGUM AGENTE NA ZONA INFECTADAS
-					for (Agente agente : dataSet.agentes) {
-						Posicao posicao = agente.movimentos.get(t);
-						if (posicao.posX == posicao.destinoX && posicao.posY == posicao.destinoY) {
-							if (posicao.posX >= zona.x0 && posicao.posX < zona.x1 && posicao.posY >= zona.y0
-									&& posicao.posY < zona.y1) {
-								agente.infectado = true;
-							}
-						}
-					}
-				}
-			}
-
-			// VERIFICA SE ALGUM INFECTADO CHEGOU PERTO DE ALGUEM
-			int infectados = 0;
-			for (Agente agente : dataSet.agentes) {
-				if (agente.infectado) {
-					infectados++;
-					// CALCULA A DISTÂNCIA PARA OS DEMAIS AGENTES
-					for (Agente x : dataSet.agentes) {
-						if (proximo(x.movimentos.get(t), agente.movimentos.get(t))) {
-							x.infectado = true;
-						}
-					}
-
-					// VERIFICA SE O INFECTADO ESTÁ PARADO EM UM LOCAL DE RISCO
-					Posicao posicao = agente.movimentos.get(t);
-					if (posicao.posX == posicao.destinoX && posicao.posY == posicao.destinoY) {
-						// VERIFICA SE TEM ALGUMA ZONA
-						for (Zona zona : dataSet.zonas) {
-							if (posicao.posX >= zona.x0 && posicao.posX < zona.x1 && posicao.posY >= zona.y0
-									&& posicao.posY < zona.y1) {
-								zona.infectado = zona.risco * 50;
-							}
-						}
-					}
-				}
-			}
-
 			g2d.setColor(Color.WHITE);
 			g2d.drawString(
-					"Infectados: " + infectados + " / " + dataSet.agentes.size()
-							+ new DecimalFormat("' ('0.0'%)'").format((infectados * 100f) / dataSet.agentes.size()),
+					"Infectados: " + infectados + " / " + dataSet.individuos.size()
+							+ new DecimalFormat("' ('0.0'%)'").format((infectados * 100f) / dataSet.individuos.size()),
 					10, 20);
-			g2d.drawString("Tempo: " + t + new DecimalFormat("' ('0.0'%)'").format((t * 100f) / dataSet.tempos), 10,
+			g2d.drawString("Tempo: " + t + new DecimalFormat("' ('0.0'%)'").format((t * 100f) / DataSet.tempos), 10,
 					40);
 			g2d.drawString("Probabilidade de Movimentar: "
-					+ new DecimalFormat("0.0'%'").format(dataSet.probabilidadeMover * 100f), 10, 60);
+					+ new DecimalFormat("0.0'%'").format(DataSet.probabilidadeMover * 100f), 10, 60);
 
 			g2d.dispose();
-
 		}
 
 	}

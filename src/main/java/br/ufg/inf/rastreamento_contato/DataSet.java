@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import br.ufg.inf.rastreamento_contato.model.*;
+
 public class DataSet {
 
 	public static final int linhas = 100, colunas = 50;
@@ -13,82 +15,98 @@ public class DataSet {
 
 	public static final double probabilidadeMover = 0.001f;
 
-	private static final int TIPOMOVIMENTO_ALEATORIO = 1;
-	private static final int TIPOMOVIMENTO_DIRECIONAL = 2;
-	private static final int tipoMovimento = TIPOMOVIMENTO_DIRECIONAL;
+	// private static final int TIPOMOVIMENTO_ALEATORIO = 1;
+	// private static final int TIPOMOVIMENTO_DIRECIONAL = 2;
+	// private static final int tipoMovimento = TIPOMOVIMENTO_DIRECIONAL;
 
 	private static Random random = new Random();
 
-	public List<Agente> agentes;
-	public List<Zona> zonas;
+	public List<Individuo> individuos;
+	public List<Objeto> objetos;
 
 	public void init() {
 		System.out.println("Criando DatSet");
 
-		zonas = new ArrayList<>();
-		zonas.add(new Zona(4, 2, 10, 2, 1));
-		zonas.add(new Zona(4, 2, 14, 2, 1));
-		zonas.add(new Zona(4, 2, 18, 2, 1));
-		zonas.add(new Zona(4, 2, 22, 2, 1));
+		objetos = new ArrayList<>();
+		objetos.add(new Objeto(4, 2, 10, 2, 1));
+		objetos.add(new Objeto(4, 2, 14, 2, 1));
+		objetos.add(new Objeto(4, 2, 18, 2, 1));
+		objetos.add(new Objeto(4, 2, 22, 2, 1));
 
-		zonas.add(new Zona(80, 4, 30, 4, 2));
-		zonas.add(new Zona(80, 4, 36, 4, 2));
+		objetos.add(new Objeto(80, 2, 20, 2, 2));
+		objetos.add(new Objeto(80, 2, 24, 2, 2));
+		objetos.add(new Objeto(80, 2, 28, 2, 2));
+		objetos.add(new Objeto(80, 2, 32, 2, 2));
+		objetos.add(new Objeto(80, 2, 36, 2, 2));
+		objetos.add(new Objeto(80, 2, 40, 2, 2));
 
-		zonas.add(new Zona(30, 4, 20, 4, 2));
-		zonas.add(new Zona(36, 4, 20, 4, 2));
+		objetos.add(new Objeto(30, 2, 20, 2, 2));
+		objetos.add(new Objeto(34, 2, 20, 2, 2));
+		objetos.add(new Objeto(38, 2, 20, 2, 2));
+		objetos.add(new Objeto(42, 2, 20, 2, 2));
+		objetos.add(new Objeto(46, 2, 20, 2, 2));
+		objetos.add(new Objeto(50, 2, 20, 2, 2));
 
-		zonas.add(new Zona(10, 4, 40, 4, 2));
-		zonas.add(new Zona(16, 4, 40, 4, 2));
+		objetos.add(new Objeto(10, 2, 30, 2, 2));
+		objetos.add(new Objeto(14, 2, 30, 2, 2));
+		objetos.add(new Objeto(10, 2, 34, 2, 2));
+		objetos.add(new Objeto(14, 2, 34, 2, 2));
+		objetos.add(new Objeto(10, 2, 38, 2, 2));
+		objetos.add(new Objeto(14, 2, 38, 2, 2));
 
-		zonas.add(new Zona(70, 4, 10, 4, 3));
-		zonas.add(new Zona(76, 4, 10, 4, 3));
+		objetos.add(new Objeto(70, 2, 10, 2, 3));
+		objetos.add(new Objeto(74, 2, 10, 2, 3));
+		objetos.add(new Objeto(70, 2, 14, 2, 3));
+		objetos.add(new Objeto(74, 2, 14, 2, 3));
+		objetos.add(new Objeto(70, 2, 18, 2, 3));
+		objetos.add(new Objeto(74, 2, 18, 2, 3));
 
-		zonas.add(new Zona(52, 2, 30, 2, 3));
-		zonas.add(new Zona(52, 2, 34, 2, 3));
+		objetos.add(new Objeto(50, 2, 30, 2, 3));
+		objetos.add(new Objeto(50, 2, 34, 2, 3));
+		objetos.add(new Objeto(54, 2, 30, 2, 3));
+		objetos.add(new Objeto(54, 2, 34, 2, 3));
+		objetos.add(new Objeto(58, 2, 30, 2, 3));
+		objetos.add(new Objeto(58, 2, 34, 2, 3));
+		objetos.add(new Objeto(62, 2, 30, 2, 3));
+		objetos.add(new Objeto(62, 2, 34, 2, 3));
 
-		zonas.add(new Zona(56, 2, 30, 2, 3));
-		zonas.add(new Zona(56, 2, 34, 2, 3));
-
-		zonas.add(new Zona(60, 2, 30, 2, 3));
-		zonas.add(new Zona(60, 2, 34, 2, 3));
-
-		zonas.add(new Zona(64, 2, 30, 2, 3));
-		zonas.add(new Zona(64, 2, 34, 2, 3));
-
-		agentes = new ArrayList();
-		// criando os agentes
+		individuos = new ArrayList<Individuo>();
+		// criando os individuos
 		char id = 'A';
 		for (int i = 0; i < qtdeAgentes; i++) {
-			agentes.add(new Agente(id++, sorteiaPosicao()));
+			individuos.add(new Individuo(id++, sorteiaPosicao()));
 		}
 
 		for (int t = 0; t < tempos; t++) {
-			for (Agente agente : agentes) {
-				Posicao atual = agente.movimentos.get(agente.movimentos.size() - 1);
+			for (Individuo individuo : individuos) {
+				Posicao atual = individuo.movimentos.get(individuo.movimentos.size() - 1);
 				Posicao proximo = new Posicao();
 				proximo.posX = atual.posX;
 				proximo.posY = atual.posY;
 				proximo.destinoX = atual.destinoX;
 				proximo.destinoY = atual.destinoY;
 
-				agente.movimentos.add(proximo);
+				individuo.movimentos.add(proximo);
 
 				// sorteia se vai relaizar ou não um movimento
-				if (agente.chegouDestino) {
+				if (individuo.chegouDestino) {
 					if (random.nextDouble() < probabilidadeMover) {
 						// se tiver chegado ao destino sorteia um novo destino
 						Posicao pos = sorteiaPosicao();
 						proximo.destinoX = pos.posX;
 						proximo.destinoY = pos.posY;
-						agente.chegouDestino = false;
+						individuo.chegouDestino = false;
+					} else {
+						// // ZERA O DESTINO
+						// proximo.destinoX = 0;
+						// proximo.destinoY = 0;
 					}
 				} else {
 					// desloca no sentido do destino
-
 					int distanciaX = atual.destinoX - atual.posX;
 					int distanciaY = atual.destinoY - atual.posY;
 					if (distanciaX == 0 && distanciaY == 0) {
-						agente.chegouDestino = true;
+						individuo.chegouDestino = true;
 					} else {
 						if (distanciaX > 0) {
 							proximo.posX = atual.posX + 1;
@@ -105,83 +123,19 @@ public class DataSet {
 				}
 			}
 		}
-
-		// // imprime na tela
-		// int t = 1;
-		// int encontrado;
-		// char charEncontrado = '.';
-		// for (int y = 0; y < colunas; y++) {
-		// for (int x = 0; x < linhas; x++) {
-		// encontrado = 0;
-		// charEncontrado = '.';
-		// for (Agente agente : agentes) {
-		// Posicao atual = agente.movimentos.get(t);
-		// if (atual.posX == x && atual.posY == y) {
-		// encontrado++;
-		// charEncontrado = agente.id;
-		// }
-		// }
-		// if (encontrado > 1) {
-		// charEncontrado = '#';
-		// }
-		// System.out.print(charEncontrado);
-		// }
-		// System.out.println();
-		// }
-
 	}
 
-	public static Posicao sorteiaPosicao() {
-		Posicao posicao = new Posicao();
-		posicao.posX = random.nextInt(linhas);
-		posicao.posY = random.nextInt(colunas);
-		return posicao;
+	public Posicao sorteiaPosicao() {
+		Objeto objeto = sorteiaObjeto();
+		return new Posicao(objeto.x0, objeto.y0);
+		// Posicao posicao = new Posicao();
+		// posicao.posX = random.nextInt(linhas);
+		// posicao.posY = random.nextInt(colunas);
+		// return posicao;
 	}
 
-	public static class Agente {
-		char id;
-		Color color;
-		public List<Posicao> movimentos;
-		boolean infectado;
-
-		boolean chegouDestino;
-
-		public Agente(char id, Posicao posicaoInicial) {
-			this.id = id;
-			movimentos = new ArrayList();
-			movimentos.add(posicaoInicial);
-			chegouDestino = true;
-
-		}
-	}
-
-	public static class Posicao {
-		int posX = 0, posY = 0;
-		int destinoX = 0, destinoY = 0;
-
-		public Posicao() {
-
-		}
-
-		public Posicao(int x0, int sizeX, int y0, int sizeY) {
-			this.posX = x0;
-			this.destinoX = x0 + sizeX;
-			this.posY = y0;
-			this.destinoY = y0 + sizeY;
-		}
-	}
-
-	public static class Zona {
-		int x0, x1, y0, y1, risco;
-		int infectado = 0;
-
-		public Zona(int x0, int sizeX, int y0, int sizeY, int risco) {
-			this.x0 = x0;
-			this.x1 = x0 + sizeX;
-			this.y0 = y0;
-			this.y1 = y0 + sizeY;
-			this.risco = risco;
-		}
+	public Objeto sorteiaObjeto() {
+		return objetos.get(random.nextInt(objetos.size()));
 	}
 
 	public static Color randomColor() {
