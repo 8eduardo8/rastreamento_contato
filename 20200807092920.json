@@ -1,0 +1,1872 @@
+{
+	"individuos": [
+		{
+			"id": "A",
+			"movimentos": [
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 24,
+					"destinoX": 80,
+					"destinoY": 24
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": true
+		},
+		{
+			"id": "B",
+			"movimentos": [
+				{
+					"posX": 80,
+					"posY": 36,
+					"destinoX": 80,
+					"destinoY": 36
+				},
+				{
+					"posX": 80,
+					"posY": 36,
+					"destinoX": 80,
+					"destinoY": 36
+				},
+				{
+					"posX": 80,
+					"posY": 36,
+					"destinoX": 80,
+					"destinoY": 36
+				},
+				{
+					"posX": 80,
+					"posY": 36,
+					"destinoX": 80,
+					"destinoY": 36
+				},
+				{
+					"posX": 80,
+					"posY": 36,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 35,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 34,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 33,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 32,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 31,
+					"destinoX": 80,
+					"destinoY": 24
+				},
+				{
+					"posX": 80,
+					"posY": 30,
+					"destinoX": 80,
+					"destinoY": 24
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "C",
+			"movimentos": [
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 46,
+					"destinoY": 20
+				},
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 46,
+					"destinoY": 20
+				},
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 46,
+					"destinoY": 20
+				},
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 46,
+					"destinoY": 20
+				},
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 47,
+					"posY": 21,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 48,
+					"posY": 22,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 49,
+					"posY": 23,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 24,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 51,
+					"posY": 25,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 52,
+					"posY": 26,
+					"destinoX": 54,
+					"destinoY": 30
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "D",
+			"movimentos": [
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 74,
+					"destinoY": 18
+				},
+				{
+					"posX": 74,
+					"posY": 18,
+					"destinoX": 54,
+					"destinoY": 34
+				},
+				{
+					"posX": 73,
+					"posY": 19,
+					"destinoX": 54,
+					"destinoY": 34
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "E",
+			"movimentos": [
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				},
+				{
+					"posX": 50,
+					"posY": 34,
+					"destinoX": 50,
+					"destinoY": 34
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": true
+		},
+		{
+			"id": "F",
+			"movimentos": [
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 46,
+					"destinoY": 20
+				},
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 45,
+					"posY": 21,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 44,
+					"posY": 22,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 43,
+					"posY": 23,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 42,
+					"posY": 24,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 41,
+					"posY": 25,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 40,
+					"posY": 26,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 39,
+					"posY": 27,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 38,
+					"posY": 28,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 37,
+					"posY": 29,
+					"destinoX": 10,
+					"destinoY": 38
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "G",
+			"movimentos": [
+				{
+					"posX": 80,
+					"posY": 40,
+					"destinoX": 80,
+					"destinoY": 40
+				},
+				{
+					"posX": 80,
+					"posY": 40,
+					"destinoX": 80,
+					"destinoY": 40
+				},
+				{
+					"posX": 80,
+					"posY": 40,
+					"destinoX": 80,
+					"destinoY": 40
+				},
+				{
+					"posX": 80,
+					"posY": 40,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 79,
+					"posY": 39,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 78,
+					"posY": 38,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 77,
+					"posY": 38,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 76,
+					"posY": 38,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 75,
+					"posY": 38,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 74,
+					"posY": 38,
+					"destinoX": 14,
+					"destinoY": 38
+				},
+				{
+					"posX": 73,
+					"posY": 38,
+					"destinoX": 14,
+					"destinoY": 38
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "H",
+			"movimentos": [
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 5,
+					"posY": 19,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 6,
+					"posY": 20,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 7,
+					"posY": 20,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 8,
+					"posY": 20,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 9,
+					"posY": 20,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 10,
+					"posY": 20,
+					"destinoX": 34,
+					"destinoY": 20
+				},
+				{
+					"posX": 11,
+					"posY": 20,
+					"destinoX": 34,
+					"destinoY": 20
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "I",
+			"movimentos": [
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				},
+				{
+					"posX": 74,
+					"posY": 10,
+					"destinoX": 74,
+					"destinoY": 10
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": true
+		},
+		{
+			"id": "J",
+			"movimentos": [
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 38,
+					"posY": 20,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 37,
+					"posY": 19,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 36,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 35,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 34,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "K",
+			"movimentos": [
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				},
+				{
+					"posX": 4,
+					"posY": 18,
+					"destinoX": 4,
+					"destinoY": 18
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": true
+		},
+		{
+			"id": "L",
+			"movimentos": [
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 58,
+					"destinoY": 34
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": true
+		},
+		{
+			"id": "M",
+			"movimentos": [
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 61,
+					"posY": 34,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 60,
+					"posY": 34,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 59,
+					"posY": 34,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 58,
+					"posY": 34,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 57,
+					"posY": 34,
+					"destinoX": 14,
+					"destinoY": 34
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "N",
+			"movimentos": [
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				},
+				{
+					"posX": 10,
+					"posY": 38,
+					"destinoX": 10,
+					"destinoY": 38
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": true
+		},
+		{
+			"id": "O",
+			"movimentos": [
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 62,
+					"destinoY": 34
+				},
+				{
+					"posX": 62,
+					"posY": 34,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 61,
+					"posY": 33,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 60,
+					"posY": 32,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 59,
+					"posY": 31,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 57,
+					"posY": 29,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 56,
+					"posY": 28,
+					"destinoX": 4,
+					"destinoY": 22
+				},
+				{
+					"posX": 55,
+					"posY": 27,
+					"destinoX": 4,
+					"destinoY": 22
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "P",
+			"movimentos": [
+				{
+					"posX": 50,
+					"posY": 20,
+					"destinoX": 50,
+					"destinoY": 20
+				},
+				{
+					"posX": 50,
+					"posY": 20,
+					"destinoX": 50,
+					"destinoY": 20
+				},
+				{
+					"posX": 50,
+					"posY": 20,
+					"destinoX": 50,
+					"destinoY": 20
+				},
+				{
+					"posX": 50,
+					"posY": 20,
+					"destinoX": 50,
+					"destinoY": 20
+				},
+				{
+					"posX": 50,
+					"posY": 20,
+					"destinoX": 50,
+					"destinoY": 20
+				},
+				{
+					"posX": 50,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 49,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 48,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 47,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 46,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				},
+				{
+					"posX": 45,
+					"posY": 20,
+					"destinoX": 38,
+					"destinoY": 20
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "Q",
+			"movimentos": [
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 50,
+					"destinoY": 30
+				},
+				{
+					"posX": 50,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 49,
+					"posY": 31,
+					"destinoX": 14,
+					"destinoY": 34
+				},
+				{
+					"posX": 48,
+					"posY": 32,
+					"destinoX": 14,
+					"destinoY": 34
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "R",
+			"movimentos": [
+				{
+					"posX": 54,
+					"posY": 30,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 54,
+					"posY": 30,
+					"destinoX": 54,
+					"destinoY": 30
+				},
+				{
+					"posX": 54,
+					"posY": 30,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 55,
+					"posY": 29,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 56,
+					"posY": 28,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 57,
+					"posY": 27,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 58,
+					"posY": 26,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 59,
+					"posY": 25,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 60,
+					"posY": 24,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 61,
+					"posY": 23,
+					"destinoX": 74,
+					"destinoY": 14
+				},
+				{
+					"posX": 62,
+					"posY": 22,
+					"destinoX": 74,
+					"destinoY": 14
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "S",
+			"movimentos": [
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 42,
+					"destinoY": 20
+				},
+				{
+					"posX": 42,
+					"posY": 20,
+					"destinoX": 10,
+					"destinoY": 34
+				},
+				{
+					"posX": 41,
+					"posY": 21,
+					"destinoX": 10,
+					"destinoY": 34
+				},
+				{
+					"posX": 40,
+					"posY": 22,
+					"destinoX": 10,
+					"destinoY": 34
+				},
+				{
+					"posX": 39,
+					"posY": 23,
+					"destinoX": 10,
+					"destinoY": 34
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		},
+		{
+			"id": "T",
+			"movimentos": [
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 58,
+					"destinoY": 30
+				},
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 58,
+					"destinoY": 30
+				},
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 58,
+					"destinoY": 30
+				},
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 58,
+					"destinoY": 30
+				},
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 58,
+					"destinoY": 30
+				},
+				{
+					"posX": 58,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 30
+				},
+				{
+					"posX": 57,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 30
+				},
+				{
+					"posX": 56,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 30
+				},
+				{
+					"tempo":12,
+					"posX": 55,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 30
+				},
+				{
+					"tempo":20,
+					"posX": 54,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 30
+				},
+				{
+					"posX": 53,
+					"posY": 30,
+					"destinoX": 14,
+					"destinoY": 30
+				}
+			],
+			"infectado": false,
+			"qtdContatoPrimario": 0,
+			"qtdContatoSecundario": 0,
+			"qtdContatoObjetoPrimario": 0,
+			"qtdContatoObjetoSecundario": 0,
+			"chegouDestino": false
+		}
+	],
+	"objetos": [
+		{
+			"x0": 4,
+			"x1": 6,
+			"y0": 10,
+			"y1": 12,
+			"risco": 1,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 4,
+			"x1": 6,
+			"y0": 14,
+			"y1": 16,
+			"risco": 1,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 4,
+			"x1": 6,
+			"y0": 18,
+			"y1": 20,
+			"risco": 1,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 4,
+			"x1": 6,
+			"y0": 22,
+			"y1": 24,
+			"risco": 1,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 80,
+			"x1": 82,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 80,
+			"x1": 82,
+			"y0": 24,
+			"y1": 26,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 80,
+			"x1": 82,
+			"y0": 28,
+			"y1": 30,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 80,
+			"x1": 82,
+			"y0": 32,
+			"y1": 34,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 80,
+			"x1": 82,
+			"y0": 36,
+			"y1": 38,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 80,
+			"x1": 82,
+			"y0": 40,
+			"y1": 42,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 30,
+			"x1": 32,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 34,
+			"x1": 36,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 38,
+			"x1": 40,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 42,
+			"x1": 44,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 46,
+			"x1": 48,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 50,
+			"x1": 52,
+			"y0": 20,
+			"y1": 22,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 10,
+			"x1": 12,
+			"y0": 30,
+			"y1": 32,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 14,
+			"x1": 16,
+			"y0": 30,
+			"y1": 32,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 10,
+			"x1": 12,
+			"y0": 34,
+			"y1": 36,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 14,
+			"x1": 16,
+			"y0": 34,
+			"y1": 36,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 10,
+			"x1": 12,
+			"y0": 38,
+			"y1": 40,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 14,
+			"x1": 16,
+			"y0": 38,
+			"y1": 40,
+			"risco": 2,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 70,
+			"x1": 72,
+			"y0": 10,
+			"y1": 12,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 74,
+			"x1": 76,
+			"y0": 10,
+			"y1": 12,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 70,
+			"x1": 72,
+			"y0": 14,
+			"y1": 16,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 74,
+			"x1": 76,
+			"y0": 14,
+			"y1": 16,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 70,
+			"x1": 72,
+			"y0": 18,
+			"y1": 20,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 74,
+			"x1": 76,
+			"y0": 18,
+			"y1": 20,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 50,
+			"x1": 52,
+			"y0": 30,
+			"y1": 32,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 50,
+			"x1": 52,
+			"y0": 34,
+			"y1": 36,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 54,
+			"x1": 56,
+			"y0": 30,
+			"y1": 32,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 54,
+			"x1": 56,
+			"y0": 34,
+			"y1": 36,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 58,
+			"x1": 60,
+			"y0": 30,
+			"y1": 32,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 58,
+			"x1": 60,
+			"y0": 34,
+			"y1": 36,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 62,
+			"x1": 64,
+			"y0": 30,
+			"y1": 32,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		},
+		{
+			"x0": 62,
+			"x1": 64,
+			"y0": 34,
+			"y1": 36,
+			"risco": 3,
+			"infectadoPrimario": 0,
+			"infectadoSecundario": 0
+		}
+	]
+}
