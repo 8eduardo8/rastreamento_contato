@@ -14,6 +14,7 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -25,6 +26,7 @@ public class Parametro extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JButton btnSair = new JButton("Sair");
 	private JButton btnExecutar = new JButton("Iniciar");
+	private JButton btnAbrirArquivo = new JButton("Selecionar Arquivo");
 
 	private JTextField txtVelocidade = new JTextField();
 	private JTextField txtTempoDescontaminacao = new JTextField();
@@ -33,10 +35,10 @@ public class Parametro extends JFrame {
 	private JCheckBox ckContatoPassagem = new JCheckBox();
 	private JCheckBox ckContatoObjeto = new JCheckBox();
 
-	private JLabel lblVelocidade = new JLabel("Velocidade de Execução :");
+	private JLabel lblVelocidade = new JLabel("Aceleracao da Execucao :");
 	private JLabel lblTempoDescontaminacao = new JLabel("Tempo de Descontaminação :");
 	private JLabel lblFator = new JLabel("Fator :");
-	private JLabel lblContatoPrimario = new JLabel("Somente Contato de Primeira Ordem :");
+	private JLabel lblContatoPrimario = new JLabel("Identificar Contatos Indiretos :");
 	private JLabel lblContatoPassagem = new JLabel("Identificar Contato de Passagem :");
 	private JLabel lblContatoObjeto = new JLabel("Identificar Contato em Objetos :");
 
@@ -67,27 +69,32 @@ public class Parametro extends JFrame {
 		// txtTempoDescontaminacao.addKeyListener(adapterNumber(txtTempoDescontaminacao));
 		btnExecutar.setBounds(360, 300, 120, 25);
 		btnSair.setBounds(360, 330, 120, 25);
+		btnAbrirArquivo.setBounds(10, 300, 200, 25);
 
 		lblVelocidade.setBounds(10, 10, 299, 20);
 		lblTempoDescontaminacao.setBounds(10, 40, 299, 20);
-		lblFator.setBounds(10, 70, 210, 20);
-		lblContatoPrimario.setBounds(10, 100, 299, 20);
+
+		lblContatoPrimario.setBounds(10, 70, 299, 20);
+		lblFator.setBounds(350, 70, 100, 20);
+
 		lblContatoPassagem.setBounds(10, 130, 299, 20);
 		lblContatoObjeto.setBounds(10, 160, 299, 20);
 
 		txtVelocidade.setBounds(300, 10, 50, 20);
 		txtTempoDescontaminacao.setBounds(300, 40, 50, 20);
-		txtFator.setBounds(300, 70, 50, 20);
-		ckContatoPrimario.setBounds(300, 100, 50, 20);
+		txtFator.setBounds(400, 70, 50, 20);
+		ckContatoPrimario.setBounds(300, 70, 50, 20);
+
 		ckContatoPassagem.setBounds(300, 130, 50, 20);
 		ckContatoObjeto.setBounds(300, 160, 50, 20);
 
-		txtVelocidade.setText("20");
+		txtVelocidade.setText("2");
 		txtTempoDescontaminacao.setText("50");
 		txtFator.setText("1");
 
 		add(btnSair);
 		add(btnExecutar);
+		add(btnAbrirArquivo);
 
 		add(lblVelocidade);
 		add(lblTempoDescontaminacao);
@@ -140,6 +147,12 @@ public class Parametro extends JFrame {
 				btnExecutar(e);
 			}
 		});
+
+		btnAbrirArquivo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnAbrirArquivo(e);
+			}
+		});
 	}
 
 	private void btnSair(ActionEvent evt) {
@@ -176,4 +189,20 @@ public class Parametro extends JFrame {
 			e.printStackTrace();
 		}
 	}
+
+	public void btnAbrirArquivo(ActionEvent e) {
+
+		final JFileChooser fc = new JFileChooser();
+		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int returnVal = fc.showOpenDialog(this);
+
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = fc.getSelectedFile();
+			// This is where a real application would open the file.
+			System.out.println("Opening: " + file.getName());
+		} else {
+			System.out.println("Open command cancelled by user.");
+		}
+	}
+
 }

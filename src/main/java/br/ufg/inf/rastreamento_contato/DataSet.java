@@ -11,7 +11,7 @@ public class DataSet {
 
 	public static final int linhas = 100, colunas = 50;
 	public static final int qtdeAgentes = 20;
-	public static final int tempos = 10;
+	public static final int tempos = 1000;
 
 	public static final double probabilidadeMover = 0.1f;
 

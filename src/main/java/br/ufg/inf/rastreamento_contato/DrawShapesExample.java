@@ -97,14 +97,21 @@ public class DrawShapesExample {
 
 		frame.add(new CustomPaintComponent());
 
+		long ultimoTime = new Date().getTime();
+
 		for (t = 0; t < DataSet.tempos; t++) {
-			System.out.println("Desenhando: " + t);
+			System.out.println("Desenhando: " + t + " - " + String.valueOf(new Date().getTime()));
 
 			frame.repaint();
 			frame.setVisible(true);
 
 			try {
-				Thread.sleep(velocidade);
+				int t = 1000 / velocidade;
+				t -= new Date().getTime() - ultimoTime;
+				if(t > 0){
+					Thread.sleep(t);
+				}
+				ultimoTime = new Date().getTime();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -227,9 +234,7 @@ public class DrawShapesExample {
 					10, 20);
 			g2d.drawString("Tempo: " + t + new DecimalFormat("' ('0.0'%)'").format((t * 100f) / DataSet.tempos), 10,
 					40);
-			g2d.drawString("Probabilidade de Movimentar: "
-					+ new DecimalFormat("0.0'%'").format(DataSet.probabilidadeMover * 100f), 10, 60);
-
+			
 			g2d.dispose();
 		}
 
