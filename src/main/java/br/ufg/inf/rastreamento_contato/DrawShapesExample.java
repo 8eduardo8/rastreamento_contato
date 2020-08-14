@@ -5,9 +5,12 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.io.File;
+import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -33,34 +36,35 @@ public class DrawShapesExample {
 
 	public static void main(String[] args) throws Exception {
 
-		// DataSet dataset = new DataSet();
-		// dataset.init();
-		//
-		// // salvar gson em um dataset
-		// Gson gson = new Gson();
-		// String json = gson.toJson(dataset);
-		//
-		// try {
-		// File file = new File(new
-		// SimpleDateFormat("yyyyMMddHHmmss'.json'").format(new Date()));
-		// System.out.println(file.getAbsolutePath());
-		// FileWriter fw = new FileWriter(file);
-		// fw.write(json);
-		// fw.flush();
-		// fw.close();
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
+		DataSet dataset = new DataSet();
+		dataset.init();
 
-		String texto = "";
-		List<String> linhas = Files.readAllLines(Paths.get(new File("dataset.json").getAbsolutePath()));
-		for (String s : linhas) {
-			texto += s;
-		}
+		// salvar gson em um dataset
 		Gson gson = new Gson();
-		DataSet dataset = gson.fromJson(texto, DataSet.class);
+		String json = gson.toJson(dataset);
 
-		new DrawShapesExample(new JFrame(), dataset, 100, 50, false).executar();
+		try {
+			File file = new File(new SimpleDateFormat("yyyyMMddHHmmss'.json'").format(new Date()));
+			System.out.println(file.getAbsolutePath());
+			FileWriter fw = new FileWriter(file);
+			fw.write(json);
+			fw.flush();
+			fw.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//
+		// String texto = "";
+		// List<String> linhas = Files.readAllLines(Paths.get(new
+		// File("dataset.json").getAbsolutePath()));
+		// for (String s : linhas) {
+		// texto += s;
+		// }
+		// Gson gson = new Gson();
+		// DataSet dataset = gson.fromJson(texto, DataSet.class);
+		//
+		// new DrawShapesExample(new JFrame(), dataset, 100, 50,
+		// false).executar();
 
 		// new Parametro();
 
@@ -127,18 +131,22 @@ public class DrawShapesExample {
 							// INDIVÃ�DUO ESTÃ� PARADO NO OBJETO
 							if (somenteContatoPrimario == false) {
 								if (objeto.infectadoSecundario > 0) {
+									// TODO multiplicar pelo fator
 									individuo.qtdContatoObjetoSecundario++;
 								}
 								if (individuo.qtdContatoObjetoSecundario > 0 || individuo.qtdContatoSecundario > 0) {
-									objeto.infectadoSecundario = tempoContaminacao * objeto.risco;
+									// TODO multiplicar pelo fator
+									objeto.infectadoSecundario = objeto.tempoDescontaminacao;
 								}
 							}
 
 							if (objeto.infectadoPrimario > 0) {
+								// TODO multiplicar pelo fator
 								individuo.qtdContatoObjetoPrimario++;
 							}
 							if (individuo.qtdContatoObjetoPrimario > 0 || individuo.qtdContatoPrimario > 0) {
-								objeto.infectadoPrimario = tempoContaminacao * objeto.risco;
+								// TODO multiplicar pelo fator
+								objeto.infectadoPrimario = objeto.tempoDescontaminacao;
 							}
 						}
 					}

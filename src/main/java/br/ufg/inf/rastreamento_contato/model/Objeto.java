@@ -1,7 +1,11 @@
 package br.ufg.inf.rastreamento_contato.model;
 
 public class Objeto {
-	public int x0, x1, y0, y1, risco;
+	public int x0, x1, y0, y1;
+
+	public int risco;
+	public int tempoDescontaminacao;
+	// public int tipoSuperficie;
 
 	public int infectadoPrimario = 0;
 	public int infectadoSecundario = 0;

@@ -28,19 +28,30 @@ public class Parametro extends JFrame {
 
 	private JTextField txtVelocidade = new JTextField();
 	private JTextField txtTempoDescontaminacao = new JTextField();
-	private JCheckBox ckContatoSecundario = new JCheckBox();
+	private JTextField txtFator = new JTextField();
+	private JCheckBox ckContatoPrimario = new JCheckBox();
+	private JCheckBox ckContatoPassagem = new JCheckBox();
+	private JCheckBox ckContatoObjeto = new JCheckBox();
 
-	private JLabel lblA = new JLabel("Velocidade de Execução :");
-	private JLabel lblB = new JLabel("Tempo de Descontaminação :");
-	private JLabel lblC = new JLabel("Somente Contato Primario :");
+	private JLabel lblVelocidade = new JLabel("Velocidade de ExecuÃ§Ã£o :");
+	private JLabel lblTempoDescontaminacao = new JLabel("Tempo de DescontaminaÃ§Ã£o :");
+	private JLabel lblFator = new JLabel("Fator :");
+	private JLabel lblContatoPrimario = new JLabel("Somente Contato de Primeira Ordem :");
+	private JLabel lblContatoPassagem = new JLabel("Identificar Contato de Passagem :");
+	private JLabel lblContatoObjeto = new JLabel("Identificar Contato em Objetos :");
 
 	public static void main(String[] args) {
-		new Parametro();
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				new Parametro();
+			}
+		}).start();
 	}
 
 	public Parametro() {
 		setTitle("Rastreamento de Contatos");
-		setSize(400, 200);
+		setSize(500, 400);
 		setLocation(new Point(300, 200));
 		setLayout(null);
 		setResizable(false);
@@ -54,28 +65,46 @@ public class Parametro extends JFrame {
 
 		// txtVelocidade.addKeyListener(adapterNumber(txtVelocidade));
 		// txtTempoDescontaminacao.addKeyListener(adapterNumber(txtTempoDescontaminacao));
+		btnExecutar.setBounds(360, 300, 120, 25);
+		btnSair.setBounds(360, 330, 120, 25);
 
-		btnSair.setBounds(300, 130, 80, 25);
-		btnExecutar.setBounds(300, 100, 80, 25);
+		lblVelocidade.setBounds(10, 10, 299, 20);
+		lblTempoDescontaminacao.setBounds(10, 40, 299, 20);
+		lblFator.setBounds(10, 70, 210, 20);
+		lblContatoPrimario.setBounds(10, 100, 299, 20);
+		lblContatoPassagem.setBounds(10, 130, 299, 20);
+		lblContatoObjeto.setBounds(10, 160, 299, 20);
 
-		txtVelocidade.setBounds(220, 10, 50, 20);
-		txtTempoDescontaminacao.setBounds(220, 35, 50, 20);
-		ckContatoSecundario.setBounds(220, 65, 50, 20);
+		txtVelocidade.setBounds(300, 10, 50, 20);
+		txtTempoDescontaminacao.setBounds(300, 40, 50, 20);
+		txtFator.setBounds(300, 70, 50, 20);
+		ckContatoPrimario.setBounds(300, 100, 50, 20);
+		ckContatoPassagem.setBounds(300, 130, 50, 20);
+		ckContatoObjeto.setBounds(300, 160, 50, 20);
 
-		lblA.setBounds(20, 10, 200, 20);
-		lblB.setBounds(20, 35, 200, 20);
-		lblC.setBounds(20, 65, 200, 20);
+		txtVelocidade.setText("20");
+		txtTempoDescontaminacao.setText("50");
+		txtFator.setText("1");
 
 		add(btnSair);
 		add(btnExecutar);
 
-		add(lblA);
-		add(lblB);
-		add(lblC);
+		add(lblVelocidade);
+		add(lblTempoDescontaminacao);
+		add(lblFator);
+		add(lblContatoPrimario);
+		add(lblContatoPassagem);
+		add(lblContatoObjeto);
 
 		add(txtVelocidade);
 		add(txtTempoDescontaminacao);
-		add(ckContatoSecundario);
+		add(txtFator);
+		add(ckContatoPrimario);
+		add(ckContatoPassagem);
+		add(ckContatoObjeto);
+
+		repaint();
+		setVisible(true);
 	}
 
 	public KeyAdapter adapterNumber(JTextField tf) {
@@ -119,10 +148,13 @@ public class Parametro extends JFrame {
 
 	private void btnExecutar(ActionEvent evt) {
 		try {
-
 			int velocidade = Integer.parseInt(txtVelocidade.getText());
 			int descontaminacao = Integer.parseInt(txtTempoDescontaminacao.getText());
-			boolean contatoSecundario = ckContatoSecundario.isSelected();
+			boolean contatoSecundario = ckContatoPrimario.isSelected();
+
+			double fator = Double.parseDouble(txtFator.getText().replace(",", "."));
+			if (fator > 1)
+				fator = 1;
 
 			String texto = "";
 			List<String> linhas = Files.readAllLines(Paths.get(new File("dataset.json").getAbsolutePath()));
@@ -132,11 +164,14 @@ public class Parametro extends JFrame {
 			Gson gson = new Gson();
 			DataSet dataset = gson.fromJson(texto, DataSet.class);
 
-			// DataSet dataset = new DataSet();
-			// dataset.init();
-			this.dispose();
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					new DrawShapesExample(new JFrame(), dataset, velocidade, descontaminacao, contatoSecundario)
+							.executar();
+				}
+			}).start();
 
-			new DrawShapesExample(this, dataset, velocidade, descontaminacao, contatoSecundario).executar();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

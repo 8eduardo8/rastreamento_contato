@@ -11,9 +11,9 @@ public class DataSet {
 
 	public static final int linhas = 100, colunas = 50;
 	public static final int qtdeAgentes = 20;
-	public static final int tempos = 10000;
+	public static final int tempos = 10;
 
-	public static final double probabilidadeMover = 0.001f;
+	public static final double probabilidadeMover = 0.1f;
 
 	// private static final int TIPOMOVIMENTO_ALEATORIO = 1;
 	// private static final int TIPOMOVIMENTO_DIRECIONAL = 2;
